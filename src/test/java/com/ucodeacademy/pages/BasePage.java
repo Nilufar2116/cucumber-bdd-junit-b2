@@ -18,4 +18,11 @@ public class BasePage extends Wait {
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
 
     }
+
+    // create  a method that takes a web element and returns its text as String
+    public String getTextOfWebElement(WebElement element){
+        // wait for web element to visible
+        wait.until(ExpectedConditions.visibilityOf(element));
+        return  element.getText();
+    }
 }
