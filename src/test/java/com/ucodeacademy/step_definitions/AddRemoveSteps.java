@@ -40,7 +40,7 @@ public class AddRemoveSteps {
     @Then("User click on Delete button")
     public void user_click_on_delete_button() {
         // wait for few seconds, so we can see the button before deleting it
-        Wait.waitForGivenTime(3);
+//        Wait.waitForGivenTime(3);
 
         addRemovePage.deleteButton.click();
 
@@ -48,7 +48,7 @@ public class AddRemoveSteps {
         // it wait for element to be clickable and click on it
        // addRemovePage.clickOn(addRemovePage.deleteButton);
 
-        Wait.waitForGivenTime(2);
+        //Wait.waitForGivenTime(2);
 
     }
     @Then("Delete Button should deleted")
@@ -62,6 +62,8 @@ public class AddRemoveSteps {
             e.getStackTrace();
             System.out.println("Delete button is not displayed");
         }
+        // fail it on purpose
+       // Assert.fail();
 
         Driver.quitDriver();
 
