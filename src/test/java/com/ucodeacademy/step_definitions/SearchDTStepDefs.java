@@ -24,6 +24,7 @@ public class SearchDTStepDefs {
             //Assert.assertTrue("Failed!",Driver.getDriver().getTitle().contains(eachWord));
         }
 
+
     }
 
 

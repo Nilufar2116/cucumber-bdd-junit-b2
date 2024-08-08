@@ -1,3 +1,4 @@
+@parallel
 Feature: Registration
 
   @register

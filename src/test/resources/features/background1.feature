@@ -1,3 +1,4 @@
+@parallel
 @background
 Feature: Login feature
   // for repeated step

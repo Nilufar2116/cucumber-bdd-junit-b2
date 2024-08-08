@@ -96,7 +96,7 @@ public class RegistrationStepDefs {
         System.out.println(Driver.getDriver().getCurrentUrl());
 
        Thread.sleep(4000);
-       Driver.quitDriver();
+       //Driver.quitDriver();
 
     }
 }

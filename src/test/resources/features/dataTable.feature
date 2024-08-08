@@ -1,3 +1,4 @@
+@parallel
 Feature: Google search functionality
 
   @dTable

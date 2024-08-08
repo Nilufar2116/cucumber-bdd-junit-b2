@@ -42,7 +42,7 @@ public class BackgroundStepDefs extends TestBase {
     public void user_should_be_able_to_login() {
        loginPage.loginButton.click();
 
-        Driver.quitDriver();
+        //Driver.quitDriver();
     }
 
 

@@ -24,7 +24,7 @@ public class Outline1StepDefs {
         // print the title of the page
         System.out.println(Driver.getDriver().getTitle());
 
-        Driver.quitDriver();
+        //Driver.quitDriver();
 
 
     }

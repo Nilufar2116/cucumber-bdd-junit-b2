@@ -68,19 +68,24 @@ public class Hooks {
     // bellow we'll use @After to take a screenshot if a scenario/step fails
     @After
     public void screenshotOfFailedScenario(Scenario scenario){
-        if (scenario.isFailed()){
+        if (scenario.isFailed()) {
             // Cast driver to TakeScreenshot to take screenshot and it in byte [] screenshot
-            byte [] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+            byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", scenario.getName());
         }
     }
 
-    // bellow we'll use @AfterStep to take a screenshot of each step
-    @AfterStep
-    public void takeScreenshot(Scenario scenario){
-        byte [] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-        scenario.attach(screenshot, "image/png",scenario.getName());
+    @After
+    public void tearDown(){
+        Driver.quitDriver();
     }
+
+    // bellow we'll use @AfterStep to take a screenshot of each step
+//    @AfterStep
+//    public void takeScreenshot(Scenario scenario){
+//        byte [] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+//        scenario.attach(screenshot, "image/png",scenario.getName());
+//    }
 
 
 

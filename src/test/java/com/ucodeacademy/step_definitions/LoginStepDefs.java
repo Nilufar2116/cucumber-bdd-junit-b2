@@ -50,7 +50,7 @@ public class LoginStepDefs extends TestBase {
         // verify error using custom method
         //assertTextContain(actualError, expectedError);
 
-       Driver.quitDriver();
+       //Driver.quitDriver();
 
         // we can call this method directly, to quit the driver
         // we follow this way Driver.quitDriver();
