@@ -56,7 +56,7 @@ public class Driver {
                     capabilities.setPlatform(Platform.ANY);
 
                     try {
-                        URL url = new URL("http://199.00.0"); // we will give the correct url later
+                        URL url = new URL("http://192.168.0.29:4444/"); // we will give the correct url later
 
                         threadLocalDriver.set(new RemoteWebDriver(url,capabilities));
                     } catch (Exception e){

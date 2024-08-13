@@ -65,7 +65,7 @@ public class AddRemoveSteps {
         // fail it on purpose
        // Assert.fail();
 
-        //Driver.quitDriver();
+//        Driver.quitDriver();
 
     }
 

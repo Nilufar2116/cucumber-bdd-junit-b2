@@ -1,4 +1,4 @@
-@parallel
+
 Feature: Google search functionality
 
   @outline1
