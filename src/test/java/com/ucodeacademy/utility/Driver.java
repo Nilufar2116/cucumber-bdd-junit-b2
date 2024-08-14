@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.net.UrlChecker;
+import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -17,20 +18,20 @@ import java.time.Duration;
 
 public class Driver {
 
-    private Driver(){
+    private Driver() {
 
     }
 
     private static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
 
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver() {
 
-        if(threadLocalDriver.get() == null){
+        if (threadLocalDriver.get() == null) {
 
             String browserName = ConfigReader.getProperty("browser");
             browserName = browserName.toLowerCase(); // make sure it is lower case
 
-            switch (browserName){
+            switch (browserName) {
 
                 case "chrome":
                     threadLocalDriver.set(new ChromeDriver());
@@ -50,16 +51,16 @@ public class Driver {
                     threadLocalDriver.set(new ChromeDriver(options));
                     break;
                 case "remote":
-
                     DesiredCapabilities capabilities = new DesiredCapabilities();
-                    capabilities.setBrowserName("chrome");
-                    capabilities.setPlatform(Platform.ANY);
+                    //capabilities.setBrowserName("safari"); // if you want to give browser name as String
+                    capabilities.setBrowserName(Browser.CHROME.browserName());
+                    capabilities.setPlatform(Platform.MAC); // Operating system Mac
 
                     try {
                         URL url = new URL("http://192.168.0.29:4444/"); // we will give the correct url later
 
-                        threadLocalDriver.set(new RemoteWebDriver(url,capabilities));
-                    } catch (Exception e){
+                        threadLocalDriver.set(new RemoteWebDriver(url, capabilities));
+                    } catch (Exception e) {
                         e.getStackTrace();
 
                         throw new RuntimeException("Remote WebDriver or URL is not working");
@@ -81,11 +82,11 @@ public class Driver {
     }
 
 
-    public static void quitDriver(){
+    public static void quitDriver() {
 
         WebDriver driver = threadLocalDriver.get();
 
-        if (driver != null){
+        if (driver != null) {
 
             driver.quit();
             threadLocalDriver.remove();
