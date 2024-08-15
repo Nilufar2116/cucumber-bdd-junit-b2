@@ -17,7 +17,7 @@ import java.util.Date;
         features = "src/test/resources/features",
         glue = "com/ucodeacademy/step_definitions",
         dryRun = false,
-        tags = "@parallel"
+        tags = "@register"
 )
 
 
