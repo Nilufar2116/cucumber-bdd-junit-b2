@@ -81,11 +81,11 @@ public class Hooks {
     }
 
     // bellow we'll use @AfterStep to take a screenshot of each step
-//    @AfterStep
-//    public void takeScreenshot(Scenario scenario){
-//        byte [] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-//        scenario.attach(screenshot, "image/png",scenario.getName());
-//    }
+    @AfterStep
+    public void takeScreenshot(Scenario scenario){
+        byte [] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+        scenario.attach(screenshot, "image/png",scenario.getName());
+    }
 
 
 
