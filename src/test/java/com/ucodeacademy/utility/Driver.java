@@ -54,10 +54,10 @@ public class Driver {
                     DesiredCapabilities capabilities = new DesiredCapabilities();
                     //capabilities.setBrowserName("safari"); // if you want to give browser name as String
                     capabilities.setBrowserName(Browser.CHROME.browserName());
-                    capabilities.setPlatform(Platform.MAC); // Operating system Mac
+                    capabilities.setPlatform(Platform.ANY); // Operating system Mac
 
                     try {
-                        URL url = new URL("http://192.168.0.29:4444/"); // we will give the correct url later
+                        URL url = new URL("http://54.160.112.8:4444/"); // we will give the correct url later
 
                         threadLocalDriver.set(new RemoteWebDriver(url, capabilities));
                     } catch (Exception e) {
